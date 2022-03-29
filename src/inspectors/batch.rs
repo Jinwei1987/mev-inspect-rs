@@ -170,7 +170,7 @@ async fn get_block_info<M: Middleware + Unpin + 'static>(
         });
 
     let receipts = provider
-        .parity_block_receipts(block_number)
+        .get_block_receipts(block_number)
         .map_err(|error| BatchEvaluationError::Block {
             block_number,
             error,
